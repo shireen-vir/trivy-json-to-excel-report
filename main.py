@@ -4,7 +4,6 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill
 from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl.utils import get_column_letter
-import openpyxl
 
 json_input_name = str(input("Enter the name of the JSON file: "))
 
@@ -96,7 +95,7 @@ for r_idx, row in enumerate(dataframe_to_rows(history_df, index=False, header=Tr
             cell.fill = PatternFill(start_color="FFA07A", fill_type="solid")
 # Apply autofilter to the "History" sheet (just showing the filter icon)
 
-ws_history.auto_filter.ref = f"A1:{openpyxl.utils.get_column_letter(len(history_df.columns))}1"
+ws_history.auto_filter.ref = f"A1:{get_column_letter(len(history_df.columns))}1"
 
 # Autofit columns in History Sheet
 history_cols_to_autofit = ["Created At", "Created By", "Is Empty Layer?"]
@@ -133,7 +132,7 @@ for r_idx, row in enumerate(dataframe_to_rows(vulnerabilities_df, index=False, h
                 cell.font = Font(color="000000")  # Black font for better visibility
 
 # Apply autofilter to the "Vulnerabilities" sheet (just showing the filter icon)
-ws_vulns.auto_filter.ref = f"A1:{openpyxl.utils.get_column_letter(len(vulnerabilities_df.columns))}1"
+ws_vulns.auto_filter.ref = f"A1:{get_column_letter(len(vulnerabilities_df.columns))}1"
 
 # Autofit selected columns in Vulnerabilities Sheet
 vuln_cols_to_autofit = [
