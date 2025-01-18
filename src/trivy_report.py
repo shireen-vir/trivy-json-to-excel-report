@@ -1,0 +1,1 @@
+# Contains functions for processing the Trivy report
