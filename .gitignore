@@ -1,0 +1,25 @@
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore virtual environment directories
+venv/
+.env/
+
+# Ignore IDE specific files (e.g., Visual Studio Code, PyCharm)
+.vscode/
+.idea/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Excel reports generated (optional, if you don't want to commit generated reports)
+*.xlsx
+
+# Ignore pytest cache directory
+.pytest_cache/
+
+# Ignore any other files/folders that are irrelevant to source control
+*.log
+*.tmp
